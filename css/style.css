@@ -8,6 +8,7 @@
   --color-white: #fff;
   --color-white-opacity-1: rgba(255, 255, 255, 0.1);
   --color-black: #000;
+  --color-dark-overlay-1: rgba(47, 48, 58, 0.8);
 
   --color-brand-1: #2196f3;
   --color-brand-2: var(--color-black);
@@ -237,7 +238,24 @@ img {
 }
 
 .header-link.current {
+  position: relative;
+
   color: var(--color-brand-1);
+}
+
+.header-link.current::after{
+  content: "";
+
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  height: 4px;
+  width: 100%;
+
+  border-radius: 2px;
+  background-color: var(--color-brand-1);
 }
 
 .header-link:focus,
@@ -245,7 +263,7 @@ img {
 .footer-link:focus,
 .footer-link:hover {
   color: var(--color-brand-1);
-  fill: var(--color-brand-1);
+  /* fill: var(--color-brand-1); */
 }
 
 .header-link-contacts {
@@ -416,8 +434,33 @@ img {
 
 .projects-item {
   --items: 3;
+
+  position: relative;
 }
 
+.projects-label {
+  position: absolute;
+  left:0;
+  bottom: 0;
+
+  height: 70px;
+  width: 100%;
+
+  padding: 27px 0;
+
+  background-color: var(--color-dark-overlay-1);
+}
+
+.projects-heading {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--color-font-3-c);
+}
 /*----------  Team section  ----------*/
 
 .section-team {
@@ -465,7 +508,7 @@ img {
 }
 
 .team-social-link:hover,
-.team-social-link:focus{
+.team-social-link:focus {
   background-color: var(--color-brand-1);
   color: var(--color-white);
 }
@@ -493,7 +536,6 @@ img {
 .clients-icon {
   fill: currentColor;
 }
-
 
 .clients-link:hover,
 .clients-link:focus {
@@ -550,7 +592,8 @@ img {
   background-color: var(--color-brand-1);
   color: var(--color-font-3-c);
 
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-text {
