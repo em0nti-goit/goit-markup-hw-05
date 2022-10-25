@@ -380,7 +380,6 @@ img {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-
 }
 
 .modal {
@@ -402,17 +401,17 @@ img {
   transform: scale(1, 1);
 
   transition: transform var(--transition-duration)
-  var(--transition-timing-function),
-opacity var(--transition-duration) var(--transition-timing-function);
+      var(--transition-timing-function),
+    opacity var(--transition-duration) var(--transition-timing-function);
 }
 
 .backdrop.is-hidden .modal {
-opacity: 0;
-transform: scale(0 , 0);
+  opacity: 0;
+  transform: scale(0, 0);
 
-transition: transform var(--transition-duration)
-var(--transition-timing-function),
-opacity var(--transition-duration) var(--transition-timing-function);
+  transition: transform var(--transition-duration)
+      var(--transition-timing-function),
+    opacity var(--transition-duration) var(--transition-timing-function);
 }
 
 .modal-btn-cloze {
@@ -655,6 +654,10 @@ opacity var(--transition-duration) var(--transition-timing-function);
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.portfolio-link:is(:hover,:focus) .portfolio-overlay-card{
+  transform: translateY(-100%);
+}
+
 .btn-filter {
   font-weight: 500;
   font-size: 16px;
@@ -702,4 +705,38 @@ opacity var(--transition-duration) var(--transition-timing-function);
   color: var(--color-font-2);
 }
 
+/*----------  Overlay  ----------*/
+.portfolio-overlay-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-overlay-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  left: 0;
+  top: 100%;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 24px;
+
+  background-color: var(--color-brand-opacity);
+
+  transition: transform var(--transition-duration) var(--transition-timing-function);
+}
+
+.portfolio-overlay-text {
+  font-size: 18px;
+  line-height: 1.56;
+  /* or 156% */
+
+  letter-spacing: 0.03em;
+
+  color: var(--color-font-3-c);
+}
 /*=====  End of Main portfolio.html  ======*/
