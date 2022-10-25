@@ -371,8 +371,6 @@ img {
 =============================================*/
 
 .backdrop {
-  display: flex;
-
   position: fixed;
   left: 0;
   top: 0;
@@ -380,6 +378,10 @@ img {
   right: 0;
 
   background-color: var(--color-black-opacity-2);
+
+  transition: visibility var(--transition-duration)
+      var(--transition-timing-function),
+    opacity var(--transition-duration) var(--transition-timing-function);
 }
 
 .backdrop.is-hidden {
@@ -389,12 +391,12 @@ img {
 }
 
 .modal {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 
   width: 528px;
   height: 581px;
-
-  margin: auto;
 
   background-color: var(--color-white);
 
@@ -404,7 +406,7 @@ img {
 
   opacity: 1;
 
-  transform: scale(1, 1);
+  transform: translate(-50%, -50%) scale(1);
 
   transition: transform var(--transition-duration)
       var(--transition-timing-function),
@@ -413,7 +415,7 @@ img {
 
 .backdrop.is-hidden .modal {
   opacity: 0;
-  transform: scale(0, 0);
+  transform: translate(-50%, -50%) scale(0.3);
 
   transition: transform var(--transition-duration)
       var(--transition-timing-function),
