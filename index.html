@@ -69,7 +69,7 @@
       <section class="section section-hero">
         <div class="container hero">
           <h1 class="page-title">Ефективні рішення для вашого бізнесу</h1>
-          <button class="btn main-btn" type="button">Замовити послугу</button>
+          <button class="btn main-btn" type="button" data-modal-open>Замовити послугу</button>
         </div>
       </section>
 
@@ -151,7 +151,7 @@
                 class="projects-item"
                 width="370"
                 height="294" />
-                <div class="projects-label">
+              <div class="projects-label">
                 <h3 class="projects-heading">Мобільні додатки</h3>
               </div>
             </li>
@@ -161,7 +161,7 @@
                 alt="Людина тримає в руках планшет"
                 width="370"
                 height="294" />
-                <div class="projects-label">
+              <div class="projects-label">
                 <h3 class="projects-heading">Дизайнерські рішення</h3>
               </div>
             </li>
@@ -467,5 +467,18 @@
         </div>
       </div>
     </footer>
+
+    <!-- /*----------  Modal  ----------*/ -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="btn modal-btn-cloze" type="button" data-modal-close>
+          <svg class="modal-cloze-icon" width="11px" height="11px">
+            <use href="./images/icons.svg#modal-cloze"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>

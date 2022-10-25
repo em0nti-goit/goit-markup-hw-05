@@ -8,9 +8,13 @@
   --color-white: #fff;
   --color-white-opacity-1: rgba(255, 255, 255, 0.1);
   --color-black: #000;
+  --color-black-opacity-1: rgba(0, 0, 0, 0.1);
+  --color-black-opacity-2: rgba(0, 0, 0, 0.2);
+
   --color-dark-overlay-1: rgba(47, 48, 58, 0.8);
 
   --color-brand-1: #2196f3;
+  --color-brand-opacity: rgba(33, 150, 243, 0.9);
   --color-brand-2: var(--color-black);
 
   --color-font-1: #212121;
@@ -30,9 +34,14 @@
   --container-width: 1200px;
   --container-padding-h: 15px;
 
+  /* card-set */
   --items: 1;
   --indent: 30px;
   --diametr-social-link: 44px;
+
+  /* transition */
+  --transition-duration: 2500ms;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page {
@@ -243,8 +252,8 @@ img {
   color: var(--color-brand-1);
 }
 
-.header-link.current::after{
-  content: "";
+.header-link.current::after {
+  content: '';
 
   display: block;
   position: absolute;
@@ -352,6 +361,80 @@ img {
 /*=====  End of Footer  ======*/
 
 /*=============================================
+=            Modal            =
+=============================================*/
+
+.backdrop {
+  display: flex;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: var(--color-black-opacity-2);
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+}
+
+.modal {
+  position: relative;
+
+  width: 528px;
+  height: 581px;
+
+  margin: auto;
+
+  background-color: var(--color-white);
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  opacity: 1;
+
+  transform: scale(1, 1);
+
+  transition: transform var(--transition-duration)
+  var(--transition-timing-function),
+opacity var(--transition-duration) var(--transition-timing-function);
+}
+
+.backdrop.is-hidden .modal {
+opacity: 0;
+transform: scale(0 , 0);
+
+transition: transform var(--transition-duration)
+var(--transition-timing-function),
+opacity var(--transition-duration) var(--transition-timing-function);
+}
+
+.modal-btn-cloze {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--color-black-opacity-1);
+
+  background-color: inherit;
+  color: var(--color-black);
+}
+.modal-cloze-icon {
+  fill: currentColor;
+}
+
+/*=====  End of Modal  ======*/
+
+/*=============================================
 =            Main index.html            =
 =============================================*/
 
@@ -440,7 +523,7 @@ img {
 
 .projects-label {
   position: absolute;
-  left:0;
+  left: 0;
   bottom: 0;
 
   height: 70px;
